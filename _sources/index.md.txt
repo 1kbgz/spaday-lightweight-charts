@@ -6,19 +6,45 @@ hidden: true
 
 
 
+docs/src/tutorial.md
+
+docs/src/how-to.md
+
+docs/src/reference.md
+
+docs/src/explanation.md
+
 
 ```
 
 # spaday-lightweight-charts
 
-Lightweight charts for spaday
+TradingView Lightweight Charts for spaday.
 
 [![Build Status](https://github.com/1kbgz/spaday-lightweight-charts/actions/workflows/build.yaml/badge.svg?branch=main&event=push)](https://github.com/1kbgz/spaday-lightweight-charts/actions/workflows/build.yaml)
 [![codecov](https://codecov.io/gh/1kbgz/spaday-lightweight-charts/branch/main/graph/badge.svg)](https://codecov.io/gh/1kbgz/spaday-lightweight-charts)
 [![License](https://img.shields.io/github/license/1kbgz/spaday-lightweight-charts)](https://github.com/1kbgz/spaday-lightweight-charts)
 [![PyPI](https://img.shields.io/pypi/v/spaday-lightweight-charts.svg)](https://pypi.python.org/pypi/spaday-lightweight-charts)
 
-## Overview
+## Documentation
 
-> [!NOTE]
-> This library was generated using [copier](https://copier.readthedocs.io/en/stable/) from the [Base Python Project Template repository](https://github.com/python-project-templates/base).
+- [Build a live chart](docs/src/tutorial.md) — guided first chart.
+- [Update chart data and appearance](docs/src/how-to.md) — task-focused recipes.
+- [API reference](docs/src/reference.md) — component props and package descriptor.
+- [Why a wrapper component?](docs/src/explanation.md) — integration design and tradeoffs.
+
+## Quick example
+
+```python
+from spaday import serve
+from spaday_lightweight_charts import LightweightChart
+
+chart = LightweightChart(
+    type="area",
+    data=[{"time": "2026-01-01", "value": 42}],
+)
+
+serve(chart, packages=["lightweight-charts"])
+```
+
+`data` accepts a point array or a time-keyed mapping. Bind it to a spaday store field for live updates. Supported series types are `line`, `area`, `candlestick`, `bar`, and `histogram`.

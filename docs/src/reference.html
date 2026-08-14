@@ -3,10 +3,10 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="prev" title="test_all" href="../test_all/index.html">
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Why Lightweight Charts uses a wrapper component" href="explanation.html"><link rel="prev" title="How to update chart data and appearance" href="how-to.html">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
-        <title>spaday_lightweight_charts - spaday-lightweight-charts v0.1.0</title>
+        <title>API reference - spaday-lightweight-charts v0.1.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -197,11 +197,10 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../test_all/index.html">test_all</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">spaday_lightweight_charts</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Build a live chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to.html">How to update chart data and appearance</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation.html">Why Lightweight Charts uses a wrapper component</a></li>
 </ul>
 
 </div>
@@ -222,7 +221,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../../_sources/autoapi/spaday_lightweight_charts/index.rst.txt" title="View this page">
+  <a class="muted-link" href="../../_sources/docs/src/reference.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -240,27 +239,59 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-spaday_lightweight_charts">
-<span id="spaday-lightweight-charts"></span><h1>spaday_lightweight_charts<a class="headerlink" href="#module-spaday_lightweight_charts" title="Link to this heading">¶</a></h1>
-<section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
-<div class="table-wrapper autosummary longtable docutils container">
-<table class="autosummary longtable docutils align-default">
+          <section class="tex2jax_ignore mathjax_ignore" id="api-reference">
+<h1>API reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
+<section id="lightweightchart">
+<h2><code class="docutils literal notranslate"><span class="pre">LightweightChart</span></code><a class="headerlink" href="#lightweightchart" title="Link to this heading">¶</a></h2>
+<p>Tag: <code class="docutils literal notranslate"><span class="pre">&lt;lightweight-chart&gt;</span></code>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Prop</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#spaday_lightweight_charts.__version__" title="spaday_lightweight_charts.__version__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__version__</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;line&quot;</span></code></p></td>
+<td><p>Series renderer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>list or mapping</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+<td><p>Points accepted by the selected series renderer.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">theme</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;light&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;dark&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;light&quot;</span></code></p></td>
+<td><p>Text and grid color mode.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="package-contents">
-<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">¶</a></h2>
-<dl class="py data">
-<dt class="sig sig-object py" id="spaday_lightweight_charts.__version__">
-<span class="sig-prename descclassname"><span class="pre">spaday_lightweight_charts.</span></span><span class="sig-name descname"><span class="pre">__version__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'0.1.0'</span></em><a class="headerlink" href="#spaday_lightweight_charts.__version__" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<p>A mapping passed to <code class="docutils literal notranslate"><span class="pre">data</span></code> is converted from <code class="docutils literal notranslate"><span class="pre">{time:</span> <span class="pre">value}</span></code> to sorted <code class="docutils literal notranslate"><span class="pre">{time,</span> <span class="pre">value}</span></code> points. An
+array is passed to Lightweight Charts unchanged.</p>
+<p>Supported series types are <code class="docutils literal notranslate"><span class="pre">line</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, <code class="docutils literal notranslate"><span class="pre">candlestick</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>, and <code class="docutils literal notranslate"><span class="pre">histogram</span></code>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="spaday_lightweight_charts.LightweightChart">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spaday_lightweight_charts.</span></span><span class="sig-name descname"><span class="pre">LightweightChart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">children</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Component</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'line'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'area'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'candlestick'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'bar'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'histogram'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'light'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'dark'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/spaday_lightweight_charts/components.html#LightweightChart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spaday_lightweight_charts.LightweightChart" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Component</span></code></p>
+<p>A TradingView lightweight-charts chart as a web component, driven by its type and data.</p>
+</dd></dl>
 
+</section>
+<section id="package">
+<h2><code class="docutils literal notranslate"><span class="pre">package</span></code><a class="headerlink" href="#package" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">spaday_lightweight_charts.package</span></code> is a <code class="docutils literal notranslate"><span class="pre">spaday.ComponentPackage</span></code> named <code class="docutils literal notranslate"><span class="pre">lightweight-charts</span></code>. It serves
+the self-contained registration bundle at <code class="docutils literal notranslate"><span class="pre">cdn/index.js</span></code>.</p>
+<p>Select it by descriptor or entry-point name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">serve</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="n">package</span><span class="p">])</span>
+<span class="n">serve</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lightweight-charts&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -269,15 +300,23 @@
       <footer>
         
         <div class="related-pages">
-          
-          <a class="prev-page" href="../test_all/index.html">
+          <a class="next-page" href="explanation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Why Lightweight Charts uses a wrapper component</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="how-to.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">test_all</div>
+                <div class="title">How to update chart data and appearance</div>
                 
               </div>
             </a>
@@ -311,12 +350,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">spaday_lightweight_charts</a><ul>
-<li><a class="reference internal" href="#attributes">Attributes</a></li>
-<li><a class="reference internal" href="#package-contents">Package Contents</a><ul>
-<li><a class="reference internal" href="#spaday_lightweight_charts.__version__"><code class="docutils literal notranslate"><span class="pre">__version__</span></code></a></li>
+<li><a class="reference internal" href="#">API reference</a><ul>
+<li><a class="reference internal" href="#lightweightchart"><code class="docutils literal notranslate"><span class="pre">LightweightChart</span></code></a><ul>
+<li><a class="reference internal" href="#spaday_lightweight_charts.LightweightChart"><code class="docutils literal notranslate"><span class="pre">LightweightChart</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#package"><code class="docutils literal notranslate"><span class="pre">package</span></code></a></li>
 </ul>
 </li>
 </ul>
