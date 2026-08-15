@@ -48,3 +48,14 @@ serve(chart, packages=["lightweight-charts"])
 ```
 
 `data` accepts a point array or a time-keyed mapping. Bind it to a spaday store field for live updates. Supported series types are `line`, `area`, `candlestick`, `bar`, and `histogram`.
+
+## Run the local example
+
+```bash
+python -m pip install -e ".[examples]"
+python -m spaday_lightweight_charts.example
+```
+
+Open `http://127.0.0.1:8011` to inspect the [complete dashboard example](spaday_lightweight_charts/example.py): three responsive
+charts, server-streamed price data, renderer controls, per-point colors, and light/dark themes. It passes
+the local package descriptor directly, so it does not install or resolve the integration from GitHub.
