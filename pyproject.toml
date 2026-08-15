@@ -37,6 +37,13 @@ dependencies = [
 lightweight-charts = "spaday_lightweight_charts:package"
 
 [project.optional-dependencies]
+examples = [
+    "pydantic>=2",
+    "starlette",
+    "transports",
+    "uvicorn",
+    "websockets",
+]
 develop = [
     "build",
     "bump-my-version",
