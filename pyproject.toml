@@ -92,6 +92,7 @@ replace = '"version": "{new_version}"'
 [tool.coverage.run]
 branch = true
 omit = [
+    "spaday_lightweight_charts/example.py",
     "spaday_lightweight_charts/tests/integration/",
 ]
 
