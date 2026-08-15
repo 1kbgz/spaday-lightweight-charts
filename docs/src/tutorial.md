@@ -62,3 +62,6 @@ the same canvas updates without replacing the custom element.
 
 You now have a chart driven by serializable spaday state. Continue with
 [Update chart data and appearance](how-to.md) for production update patterns.
+
+For a larger application with three chart types, server-streamed prices, renderer controls, and theming, run the
+[complete dashboard example](../../spaday_lightweight_charts/example.py).
