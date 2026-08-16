@@ -27,3 +27,17 @@ test("renders and reactively updates a chart", async ({ page }) => {
     { time: "2026-01-03", value: 15 },
   ]);
 });
+
+test("runs the Python dashboard with live server prices", async ({ page }) => {
+  await page.goto("http://127.0.0.1:8011");
+  const chart = page.locator("lightweight-chart").first();
+  await expect(chart.locator("canvas").first()).toBeVisible();
+  const initial = await chart.evaluate((element) => element.data.at(-1).value);
+  await expect
+    .poll(() => chart.evaluate((element) => element.data.at(-1).value), {
+      timeout: 5_000,
+    })
+    .not.toBe(initial);
+  await page.getByRole("button", { name: "Line" }).click();
+  await expect(chart).toHaveJSProperty("type", "line");
+});
