@@ -23,7 +23,8 @@ Supported series types are `line`, `area`, `candlestick`, `bar`, and `histogram`
 ## `package`
 
 `spaday_lightweight_charts.package` is a `spaday.ComponentPackage` named `lightweight-charts`. It serves
-the self-contained registration bundle at `cdn/index.js`.
+the self-contained registration bundle at `cdn/index.js`. Its `components` collection contains
+`LightweightChart`; `catalog` returns the component's property, event, and slot schema.
 
 Select it by descriptor or entry-point name:
 

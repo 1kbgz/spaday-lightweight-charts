@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
+from spaday.catalog import ComponentSchema, PropertySchema
 from spaday.component import Child, Component
 
 __all__ = ["LightweightChart"]
@@ -12,6 +13,26 @@ class LightweightChart(Component):
     """A TradingView lightweight-charts chart as a web component, driven by its type and data."""
 
     tag = "lightweight-chart"
+    schema = ComponentSchema(
+        tag="lightweight-chart",
+        class_name="LightweightChart",
+        summary="A TradingView lightweight-charts chart as a web component, driven by its type and data.",
+        props=(
+            PropertySchema(
+                name="type", kind="enum", choices=("line", "area", "candlestick", "bar", "histogram"), default="line", description="The series type."
+            ),
+            PropertySchema(
+                name="data",
+                kind="json",
+                choices=(),
+                default=None,
+                description="The series data: an array of points. line/area/histogram use {time, value}; candlestick/bar use {time, open, high, low, close}.",
+            ),
+            PropertySchema(name="theme", kind="enum", choices=("light", "dark"), default="light", description="Chart text and grid color theme."),
+        ),
+        events=(),
+        slots=(),
+    )
 
     def __init__(
         self,

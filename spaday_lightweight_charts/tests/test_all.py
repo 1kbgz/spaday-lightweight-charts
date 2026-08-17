@@ -38,6 +38,7 @@ def test_chart_serializes_series_props():
 
 def test_package_drives_bootstrap_asset_url():
     assert package.name == "lightweight-charts"
+    assert [(schema.tag, schema.class_name) for schema in package.catalog] == [("lightweight-chart", "LightweightChart")]
     assert 'src="/components/lightweight-charts/cdn/index.js"' in bootstrap(packages=[package])
 
 
