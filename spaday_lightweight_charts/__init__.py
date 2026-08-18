@@ -4,7 +4,7 @@ from spaday import ComponentPackage
 
 from .components import LightweightChart
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 package = ComponentPackage(
     name="lightweight-charts",
