@@ -244,7 +244,7 @@
 <p>In this tutorial, we will serve an area chart and replace its data from browser state.</p>
 <section id="install-the-packages">
 <h2>Install the packages<a class="headerlink" href="#install-the-packages" title="Link to this heading">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;spaday[examples]&quot;</span><span class="w"> </span>spaday-lightweight-charts
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"spaday[examples]"</span><span class="w"> </span>spaday-lightweight-charts
 </pre></div>
 </div>
 </section>
@@ -258,35 +258,35 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">spaday_lightweight_charts</span><span class="w"> </span><span class="kn">import</span> <span class="n">LightweightChart</span>
 
 <span class="n">initial</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-01-02&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"time"</span><span class="p">:</span> <span class="s2">"2026-01-01"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"time"</span><span class="p">:</span> <span class="s2">"2026-01-02"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mi">14</span><span class="p">},</span>
 <span class="p">]</span>
 
 <span class="n">chart</span> <span class="o">=</span> <span class="n">LightweightChart</span><span class="p">(</span>
-    <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s2">"area"</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">initial</span><span class="p">,</span>
-    <span class="n">style</span><span class="o">=</span><span class="s2">&quot;height: 24rem&quot;</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;series&quot;</span><span class="p">)</span>
+    <span class="n">style</span><span class="o">=</span><span class="s2">"height: 24rem"</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="s2">"series"</span><span class="p">)</span>
 
-<span class="n">replace</span> <span class="o">=</span> <span class="n">element</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Replace data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">on</span><span class="p">(</span>
-    <span class="s2">&quot;click&quot;</span><span class="p">,</span>
+<span class="n">replace</span> <span class="o">=</span> <span class="n">element</span><span class="p">(</span><span class="s2">"button"</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Replace data"</span><span class="p">)</span><span class="o">.</span><span class="n">on</span><span class="p">(</span>
+    <span class="s2">"click"</span><span class="p">,</span>
     <span class="n">SetField</span><span class="p">(</span>
-        <span class="s2">&quot;series&quot;</span><span class="p">,</span>
+        <span class="s2">"series"</span><span class="p">,</span>
         <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-01-02&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">"time"</span><span class="p">:</span> <span class="s2">"2026-01-01"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">"time"</span><span class="p">:</span> <span class="s2">"2026-01-02"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mi">12</span><span class="p">},</span>
         <span class="p">],</span>
     <span class="p">),</span>
 <span class="p">)</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">serve</span><span class="p">(</span>
-    <span class="n">element</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="n">chart</span><span class="p">,</span> <span class="n">replace</span><span class="p">),</span>
-    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lightweight-charts&quot;</span><span class="p">],</span>
-    <span class="n">store</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;series&quot;</span><span class="p">:</span> <span class="n">initial</span><span class="p">},</span>
+    <span class="n">element</span><span class="p">(</span><span class="s2">"main"</span><span class="p">,</span> <span class="n">chart</span><span class="p">,</span> <span class="n">replace</span><span class="p">),</span>
+    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">"lightweight-charts"</span><span class="p">],</span>
+    <span class="n">store</span><span class="o">=</span><span class="p">{</span><span class="s2">"series"</span><span class="p">:</span> <span class="n">initial</span><span class="p">},</span>
 <span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"127.0.0.1"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Run the app:</p>

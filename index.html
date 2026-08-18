@@ -263,18 +263,18 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">spaday_lightweight_charts</span><span class="w"> </span><span class="kn">import</span> <span class="n">LightweightChart</span>
 
 <span class="n">chart</span> <span class="o">=</span> <span class="n">LightweightChart</span><span class="p">(</span>
-    <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span>
-    <span class="n">data</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}],</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s2">"area"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[{</span><span class="s2">"time"</span><span class="p">:</span> <span class="s2">"2026-01-01"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mi">42</span><span class="p">}],</span>
 <span class="p">)</span>
 
-<span class="n">serve</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lightweight-charts&quot;</span><span class="p">])</span>
+<span class="n">serve</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">"lightweight-charts"</span><span class="p">])</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">data</span></code> accepts a point array or a time-keyed mapping. Bind it to a spaday store field for live updates. Supported series types are <code class="docutils literal notranslate"><span class="pre">line</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, <code class="docutils literal notranslate"><span class="pre">candlestick</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>, and <code class="docutils literal notranslate"><span class="pre">histogram</span></code>.</p>
 </section>
 <section id="run-the-local-example">
 <h2>Run the local example<a class="headerlink" href="#run-the-local-example" title="Link to this heading">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[examples]&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[examples]"</span>
 python<span class="w"> </span>-m<span class="w"> </span>spaday_lightweight_charts.example
 </pre></div>
 </div>

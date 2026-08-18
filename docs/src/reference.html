@@ -286,10 +286,11 @@ array is passed to Lightweight Charts unchanged.</p>
 <section id="package">
 <h2><code class="docutils literal notranslate"><span class="pre">package</span></code><a class="headerlink" href="#package" title="Link to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">spaday_lightweight_charts.package</span></code> is a <code class="docutils literal notranslate"><span class="pre">spaday.ComponentPackage</span></code> named <code class="docutils literal notranslate"><span class="pre">lightweight-charts</span></code>. It serves
-the self-contained registration bundle at <code class="docutils literal notranslate"><span class="pre">cdn/index.js</span></code>.</p>
+the self-contained registration bundle at <code class="docutils literal notranslate"><span class="pre">cdn/index.js</span></code>. Its <code class="docutils literal notranslate"><span class="pre">components</span></code> collection contains
+<code class="docutils literal notranslate"><span class="pre">LightweightChart</span></code>; <code class="docutils literal notranslate"><span class="pre">catalog</span></code> returns the component’s property, event, and slot schema.</p>
 <p>Select it by descriptor or entry-point name:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">serve</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="n">package</span><span class="p">])</span>
-<span class="n">serve</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lightweight-charts&quot;</span><span class="p">])</span>
+<span class="n">serve</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">"lightweight-charts"</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>

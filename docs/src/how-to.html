@@ -247,15 +247,15 @@
 <p>Bind <code class="docutils literal notranslate"><span class="pre">data</span></code> to the store field that owns the series:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spaday_lightweight_charts</span><span class="w"> </span><span class="kn">import</span> <span class="n">LightweightChart</span>
 
-<span class="n">chart</span> <span class="o">=</span> <span class="n">LightweightChart</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;prices&quot;</span><span class="p">)</span>
+<span class="n">chart</span> <span class="o">=</span> <span class="n">LightweightChart</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"line"</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="s2">"prices"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set <code class="docutils literal notranslate"><span class="pre">prices</span></code> to either an ordered point list or a time-keyed mapping. A transports-backed store can
 update the same field without rebuilding the component tree.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">store</span><span class="o">=</span><span class="p">{</span>
-    <span class="s2">&quot;prices&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;2026-01-01&quot;</span><span class="p">:</span> <span class="mf">101.5</span><span class="p">,</span>
-        <span class="s2">&quot;2026-01-02&quot;</span><span class="p">:</span> <span class="mf">103.25</span><span class="p">,</span>
+    <span class="s2">"prices"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"2026-01-01"</span><span class="p">:</span> <span class="mf">101.5</span><span class="p">,</span>
+        <span class="s2">"2026-01-02"</span><span class="p">:</span> <span class="mf">103.25</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -264,7 +264,7 @@ update the same field without rebuilding the component tree.</p>
 <section id="switch-series-type">
 <h2>Switch series type<a class="headerlink" href="#switch-series-type" title="Link to this heading">¶</a></h2>
 <p>Bind <code class="docutils literal notranslate"><span class="pre">type</span></code> when users need to switch renderers:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LightweightChart</span><span class="p">()</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;series_type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;prices&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LightweightChart</span><span class="p">()</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"series_type"</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="s2">"prices"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Valid values are <code class="docutils literal notranslate"><span class="pre">line</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, <code class="docutils literal notranslate"><span class="pre">candlestick</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>, and <code class="docutils literal notranslate"><span class="pre">histogram</span></code>.</p>
@@ -272,7 +272,7 @@ update the same field without rebuilding the component tree.</p>
 <section id="match-a-dark-surface">
 <h2>Match a dark surface<a class="headerlink" href="#match-a-dark-surface" title="Link to this heading">¶</a></h2>
 <p>Set or bind <code class="docutils literal notranslate"><span class="pre">theme</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LightweightChart</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">prices</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LightweightChart</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">"dark"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">prices</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The wrapper keeps its background transparent and updates chart text and grid colors.</p>

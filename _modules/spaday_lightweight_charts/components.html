@@ -238,34 +238,55 @@
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Literal</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">spaday.catalog</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComponentSchema</span><span class="p">,</span> <span class="n">PropertySchema</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">spaday.component</span><span class="w"> </span><span class="kn">import</span> <span class="n">Child</span><span class="p">,</span> <span class="n">Component</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LightweightChart&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"LightweightChart"</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="LightweightChart">
 <a class="viewcode-back" href="../../docs/src/reference.html#spaday_lightweight_charts.LightweightChart">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">LightweightChart</span><span class="p">(</span><span class="n">Component</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A TradingView lightweight-charts chart as a web component, driven by its type and data.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""A TradingView lightweight-charts chart as a web component, driven by its type and data."""</span>
 
-    <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;lightweight-chart&quot;</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="s2">"lightweight-chart"</span>
+    <span class="n">schema</span> <span class="o">=</span> <span class="n">ComponentSchema</span><span class="p">(</span>
+        <span class="n">tag</span><span class="o">=</span><span class="s2">"lightweight-chart"</span><span class="p">,</span>
+        <span class="n">class_name</span><span class="o">=</span><span class="s2">"LightweightChart"</span><span class="p">,</span>
+        <span class="n">summary</span><span class="o">=</span><span class="s2">"A TradingView lightweight-charts chart as a web component, driven by its type and data."</span><span class="p">,</span>
+        <span class="n">props</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">PropertySchema</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">"type"</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"enum"</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="s2">"line"</span><span class="p">,</span> <span class="s2">"area"</span><span class="p">,</span> <span class="s2">"candlestick"</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">,</span> <span class="s2">"histogram"</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="s2">"line"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"The series type."</span>
+            <span class="p">),</span>
+            <span class="n">PropertySchema</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">"data"</span><span class="p">,</span>
+                <span class="n">kind</span><span class="o">=</span><span class="s2">"json"</span><span class="p">,</span>
+                <span class="n">choices</span><span class="o">=</span><span class="p">(),</span>
+                <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="s2">"The series data: an array of points. line/area/histogram use {time, value}; candlestick/bar use {time, open, high, low, close}."</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">PropertySchema</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"theme"</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"enum"</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="s2">"light"</span><span class="p">,</span> <span class="s2">"dark"</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="s2">"light"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Chart text and grid color theme."</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">events</span><span class="o">=</span><span class="p">(),</span>
+        <span class="n">slots</span><span class="o">=</span><span class="p">(),</span>
+    <span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">*</span><span class="n">children</span><span class="p">:</span> <span class="n">Child</span><span class="p">,</span>
         <span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="nb">type</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="s2">&quot;candlestick&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;histogram&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="nb">type</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"line"</span><span class="p">,</span> <span class="s2">"area"</span><span class="p">,</span> <span class="s2">"candlestick"</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">,</span> <span class="s2">"histogram"</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">data</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">theme</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="s2">&quot;dark&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">theme</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"light"</span><span class="p">,</span> <span class="s2">"dark"</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">props</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="o">*</span><span class="n">children</span><span class="p">,</span>
             <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
             <span class="n">props</span><span class="o">=</span><span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
-                <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span>
-                <span class="s2">&quot;theme&quot;</span><span class="p">:</span> <span class="n">theme</span><span class="p">,</span>
+                <span class="s2">"type"</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
+                <span class="s2">"data"</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span>
+                <span class="s2">"theme"</span><span class="p">:</span> <span class="n">theme</span><span class="p">,</span>
             <span class="p">},</span>
             <span class="o">**</span><span class="n">props</span><span class="p">,</span>
         <span class="p">)</span></div>
