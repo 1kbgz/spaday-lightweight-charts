@@ -17,7 +17,12 @@ docs/src/explanation.md
 
 ```
 
-# spaday-lightweight-charts
+<a href="https://github.com/1kbgz/spaday-lightweight-charts">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/1kbgz/spaday-lightweight-charts/raw/main/docs/img/logo-dark.png?raw=true">
+    <img alt="spaday-lightweight-charts logo, panels with charts emerging from a lotus leaf" src="https://github.com/1kbgz/spaday-lightweight-charts/raw/main/docs/img/logo-light.png?raw=true" width="1200">
+  </picture>
+</a>
 
 TradingView Lightweight Charts for spaday.
 
