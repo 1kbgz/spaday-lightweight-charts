@@ -1,4 +1,5 @@
 import { bundle } from "./tools/bundle.mjs";
+import { bundle_css } from "./tools/css.mjs";
 import { node_modules_external } from "./tools/externals.mjs";
 
 import fs from "fs";
@@ -22,6 +23,9 @@ async function build() {
     recursive: true,
     force: true,
   });
+
+  // Bundle css
+  await bundle_css();
 
   // Copy HTML
   await cpy("src/html/*", "dist/");
