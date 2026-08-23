@@ -31,8 +31,10 @@ async function build() {
   await cpy("src/html/*", "dist/");
 
   // Copy images
-  fs.mkdirSync("dist/img", { recursive: true });
-  await cpy("src/img/*", "dist/img");
+  if (fs.existsSync("src/img")) {
+    fs.mkdirSync("dist/img", { recursive: true });
+    await cpy("src/img/*", "dist/img");
+  }
 
   await Promise.all(BUNDLES.map(bundle)).catch(() => process.exit(1));
 
@@ -45,4 +47,4 @@ async function build() {
   });
 }
 
-build();
+await build();
