@@ -23,7 +23,10 @@ package = ComponentPackage(
 TOKENS = {
     "spa_lightweight_charts_text": ("--spa-lightweight-charts-text", "axis and legend text (defaults to --spa-muted)"),
     "spa_lightweight_charts_grid": ("--spa-lightweight-charts-grid", "grid line color (defaults to --spa-border)"),
-    "spa_lightweight_charts_background": ("--spa-lightweight-charts-background", "chart background (transparent by default, so the surface behind shows through)"),
+    "spa_lightweight_charts_background": (
+        "--spa-lightweight-charts-background",
+        "chart background (transparent by default, so the surface behind shows through)",
+    ),
 }
 
 __all__ = ["TOKENS", "LightweightChart", "package"]
