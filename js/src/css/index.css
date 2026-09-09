@@ -1,0 +1,46 @@
+/* lightweight-charts draws to a canvas, so it cannot read CSS the way the other packages do. The
+ * token chain still lives here — the element samples the *resolved* value of each private token
+ * with getComputedStyle and feeds it to the chart, so theming works exactly like every other
+ * spaday component package: set --spa-lightweight-charts-* to theme the chart alone, or re-theme
+ * the shell and the chart follows. Public tokens are only read, never defined, so a token set on
+ * an ancestor (an App-level theme) still reaches the chart.
+ *
+ * The chart re-samples these when its `theme` property is set, which is what spaday's page-mode
+ * binding drives (`compute("theme", cond(field("dark"), "dark", "light"))`). */
+
+lightweight-chart {
+  --_spa-lightweight-charts-text: var(
+    --spa-lightweight-charts-text,
+    var(--spa-muted, #222222)
+  );
+  --_spa-lightweight-charts-grid: var(
+    --spa-lightweight-charts-grid,
+    var(--spa-border, #ededed)
+  );
+  --_spa-lightweight-charts-background: var(
+    --spa-lightweight-charts-background,
+    transparent
+  );
+}
+
+:where(.wa-dark) lightweight-chart {
+  --_spa-lightweight-charts-text: var(
+    --spa-lightweight-charts-text,
+    var(--spa-muted, #c9c9d2)
+  );
+  --_spa-lightweight-charts-grid: var(
+    --spa-lightweight-charts-grid,
+    var(--spa-border, #2c2c34)
+  );
+}
+
+:where(.wa-light) lightweight-chart {
+  --_spa-lightweight-charts-text: var(
+    --spa-lightweight-charts-text,
+    var(--spa-muted, #222222)
+  );
+  --_spa-lightweight-charts-grid: var(
+    --spa-lightweight-charts-grid,
+    var(--spa-border, #ededed)
+  );
+}
