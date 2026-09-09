@@ -107,7 +107,8 @@ export class LightweightChart extends HTMLElement {
 
   // lightweight-charts is a canvas — it doesn't read CSS, so it can't follow the page's light/dark
   // theme on its own. Set `theme` to recolor its text + grid; the background stays transparent so the
-  // surface behind it (e.g. a wa-card) shows through and matches whichever mode is active.
+  // surface behind it (e.g. a wa-card) shows through and matches whichever mode is active. The
+  // colors themselves come from the package's CSS tokens (see index.css), sampled here.
   get theme(): "light" | "dark" {
     return this._theme;
   }
@@ -116,17 +117,37 @@ export class LightweightChart extends HTMLElement {
     this.applyTheme();
   }
 
+  // the resolved value of one of the package's private tokens, or `fallback` when the package
+  // stylesheet is not on the page (the element also works standalone, from the CDN bundle alone)
+  private token(name: string, fallback: string): string {
+    const value = getComputedStyle(this).getPropertyValue(name).trim();
+    return value || fallback;
+  }
+
   private applyTheme(): void {
     if (!this.chart) return;
     const dark = this._theme === "dark";
+    const grid = this.token(
+      "--_spa-lightweight-charts-grid",
+      dark ? "#2c2c34" : "#ededed",
+    );
     this.chart.applyOptions({
       layout: {
-        background: { type: ColorType.Solid, color: "rgba(0,0,0,0)" },
-        textColor: dark ? "#c9c9d2" : "#222222",
+        background: {
+          type: ColorType.Solid,
+          color: this.token(
+            "--_spa-lightweight-charts-background",
+            "rgba(0,0,0,0)",
+          ),
+        },
+        textColor: this.token(
+          "--_spa-lightweight-charts-text",
+          dark ? "#c9c9d2" : "#222222",
+        ),
       },
       grid: {
-        vertLines: { color: dark ? "#2c2c34" : "#ededed" },
-        horzLines: { color: dark ? "#2c2c34" : "#ededed" },
+        vertLines: { color: grid },
+        horzLines: { color: grid },
       },
     });
   }
