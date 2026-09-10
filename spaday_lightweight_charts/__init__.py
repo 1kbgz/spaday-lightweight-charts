@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 from spaday import ComponentPackage
@@ -6,11 +7,15 @@ from .components import LightweightChart
 
 __version__ = "0.2.1"
 
+# the exact version of each JS library the package serves, written by its JS build
+_VERSIONS = Path(__file__).parent / "extension" / "versions.json"
+
 package = ComponentPackage(
     name="lightweight-charts",
     assets_dir=Path(__file__).parent / "extension",
     assets=(("css", "css/index.css"), ("js", "cdn/index.js")),
     components=(LightweightChart,),
+    provides=json.loads(_VERSIONS.read_text(encoding="utf-8")) if _VERSIONS.exists() else {},
 )
 
 #: ``css()`` kwarg → (CSS custom property, what it controls), in the shape of
