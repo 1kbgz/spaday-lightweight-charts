@@ -4,7 +4,7 @@ from pathlib import Path
 from spaday import generate
 from spaday.bootstrap import bootstrap
 
-from spaday_lightweight_charts import LightweightChart, package
+from spaday_lightweight_charts import TOKENS, LightweightChart, package
 
 
 def _generated_ast(source: str) -> str:
@@ -46,3 +46,15 @@ def test_generated_component_is_current():
     root = Path(__file__).parent.parent
     fresh = generate(str(root / "components.cem.json"))
     assert _generated_ast(fresh) == _generated_ast((root / "components.py").read_text(encoding="utf-8"))
+
+
+def test_structured_fallbacks_match_the_stylesheet():
+    import re
+
+    css = re.sub(r"\s+", "", (Path(__file__).parents[2] / "js" / "src" / "css" / "index.css").read_text())
+    for token in (token for token in TOKENS.values() if token.fallback is not None):
+        prop = token.property
+        fallback = token.fallback
+        private = prop.replace("--spa-", "--_spa-")
+        definitions = re.findall(rf"{private}:([^;]+);", css)
+        assert definitions and all(f"var({fallback}," in definition for definition in definitions)
