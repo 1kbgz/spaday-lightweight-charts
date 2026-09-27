@@ -11,7 +11,7 @@
 lightweight-chart {
   --_spa-lightweight-charts-text: var(
     --spa-lightweight-charts-text,
-    var(--spa-muted, #222222)
+    var(--spa-text, #222222)
   );
   --_spa-lightweight-charts-grid: var(
     --spa-lightweight-charts-grid,
@@ -26,7 +26,7 @@ lightweight-chart {
 :where(.wa-dark) lightweight-chart {
   --_spa-lightweight-charts-text: var(
     --spa-lightweight-charts-text,
-    var(--spa-muted, #c9c9d2)
+    var(--spa-text, #c9c9d2)
   );
   --_spa-lightweight-charts-grid: var(
     --spa-lightweight-charts-grid,
@@ -37,7 +37,7 @@ lightweight-chart {
 :where(.wa-light) lightweight-chart {
   --_spa-lightweight-charts-text: var(
     --spa-lightweight-charts-text,
-    var(--spa-muted, #222222)
+    var(--spa-text, #222222)
   );
   --_spa-lightweight-charts-grid: var(
     --spa-lightweight-charts-grid,
