@@ -25,7 +25,7 @@ package = ComponentPackage(
 #:
 #:     LightweightChart(data=d).css(spa_lightweight_charts_grid="#AECEC3")
 TOKENS = {
-    "spa_lightweight_charts_text": Token("--spa-lightweight-charts-text", "axis and legend text", fallback="--spa-muted"),
+    "spa_lightweight_charts_text": Token("--spa-lightweight-charts-text", "axis and legend text", fallback="--spa-text"),
     "spa_lightweight_charts_grid": Token("--spa-lightweight-charts-grid", "grid line color", fallback="--spa-border"),
     "spa_lightweight_charts_background": Token(
         "--spa-lightweight-charts-background",

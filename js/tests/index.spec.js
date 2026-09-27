@@ -58,14 +58,17 @@ test("chart colors come from the package's CSS tokens", async ({ page }) => {
     const options = () => chart.chart.options();
     // an ancestor's shell token reaches the chart...
     host.style.setProperty("--spa-border", "rgb(1, 2, 3)");
+    host.style.setProperty("--spa-text", "rgb(7, 8, 9)");
     chart.theme = "light";
     const fromShell = options().grid.vertLines.color;
+    const textFromShell = options().layout.textColor;
     // ...and the package token outranks it
     host.style.setProperty("--spa-lightweight-charts-grid", "rgb(4, 5, 6)");
     chart.theme = "light";
     const fromPackage = options().grid.vertLines.color;
-    return { fromShell, fromPackage };
+    return { fromShell, textFromShell, fromPackage };
   });
   expect(r.fromShell).toBe("rgb(1, 2, 3)");
+  expect(r.textFromShell).toBe("rgb(7, 8, 9)");
   expect(r.fromPackage).toBe("rgb(4, 5, 6)");
 });
