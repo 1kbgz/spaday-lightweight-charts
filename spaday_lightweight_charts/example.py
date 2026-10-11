@@ -1,11 +1,11 @@
 import asyncio
 import math
 from datetime import date, timedelta
-from typing import Any
+from typing import Any, TypedDict
 
 import transports
 from pydantic import BaseModel
-from spaday import SetField, ToggleField, cond, element, field
+from spaday import Component, SetField, ToggleField, cond, element, field
 from spaday.backends.starlette import serve
 from starlette.routing import WebSocketRoute
 
@@ -14,7 +14,15 @@ from spaday_lightweight_charts import LightweightChart, package
 days = [date(2026, 6, 16) + timedelta(days=index) for index in range(60)]
 closes = [round(176 + index * 0.42 + math.sin(index / 3) * 5.5, 2) for index in range(60)]
 prices = [{"time": day.isoformat(), "value": close} for day, close in zip(days, closes, strict=True)]
-volume = [
+
+
+class VolumePoint(TypedDict):
+    time: str
+    value: int
+    color: str
+
+
+volume: list[VolumePoint] = [
     {
         "time": day.isoformat(),
         "value": 1_100_000 + int(abs(math.cos(index / 4)) * 900_000),
@@ -62,7 +70,7 @@ async def stream_prices() -> None:
         index += 1
 
 
-def chart(component: LightweightChart) -> LightweightChart:
+def chart(component: Component) -> Component:
     return component.compute("theme", cond(field("dark"), "dark", "light"))
 
 
