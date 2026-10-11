@@ -279,6 +279,21 @@ update the same field without rebuilding the component tree.</p>
 <p>The wrapper keeps its background transparent and updates chart text and grid colors.</p>
 <p>Refer to the <a class="reference internal" href="reference.html"><span class="std std-doc">API reference</span></a> for exact prop shapes.</p>
 </section>
+<section id="run-the-dashboard-in-a-browser">
+<h2>Run the dashboard in a browser<a class="headerlink" href="#run-the-dashboard-in-a-browser" title="Link to this heading">¶</a></h2>
+<p>Open the <a class="reference external" href="https://1kbgz.github.io/spaday-lightweight-charts/lite/">Pyodide dashboard</a> without installing
+Python or starting a backend server. It runs the same
+<a class="reference external" href="https://github.com/1kbgz/spaday-lightweight-charts/blob/main/spaday_lightweight_charts/example.py">Python example</a>
+in a worker, with a transports-backed price feed. Each tab has its own feed; an internet connection
+is required to download Pyodide and dependencies.</p>
+<p>To build and serve the preview from a checkout:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>develop
+make<span class="w"> </span>pyodide-example
+python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--directory<span class="w"> </span>dist
+</pre></div>
+</div>
+<p>Open <a class="reference external" href="http://127.0.0.1:8000/lite/">http://127.0.0.1:8000/lite/</a>. Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test-pyodide-example</span></code> to check the browser demo.</p>
+</section>
 </section>
 
         </article>
@@ -340,6 +355,7 @@ update the same field without rebuilding the component tree.</p>
 <li><a class="reference internal" href="#bind-a-live-series">Bind a live series</a></li>
 <li><a class="reference internal" href="#switch-series-type">Switch series type</a></li>
 <li><a class="reference internal" href="#match-a-dark-surface">Match a dark surface</a></li>
+<li><a class="reference internal" href="#run-the-dashboard-in-a-browser">Run the dashboard in a browser</a></li>
 </ul>
 </li>
 </ul>

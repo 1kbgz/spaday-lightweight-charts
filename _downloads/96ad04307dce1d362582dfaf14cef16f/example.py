@@ -4,7 +4,6 @@ from datetime import date, timedelta
 from typing import Any
 
 import transports
-import uvicorn
 from pydantic import BaseModel
 from spaday import SetField, ToggleField, cond, element, field
 from spaday.backends.starlette import serve
@@ -154,16 +153,20 @@ styles = """
 </style>
 """
 
+initial_store = {"series_type": "area", "dark": False}
+
 app = serve(
     page,
     packages=[package],
     wire="transports",
     routes=[WebSocketRoute("/ws", transports.ws_endpoint(server))],
     background=[transports.autosync(server), stream_prices()],
-    store={"series_type": "area", "dark": False},
+    store=initial_store,
     head=styles,
     title="spaday-lightweight-charts example",
 )
 
 if __name__ == "__main__":
+    import uvicorn
+
     uvicorn.run(app, host="127.0.0.1", port=8011)
