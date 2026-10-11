@@ -12,6 +12,8 @@ TradingView Lightweight Charts for spaday.
 [![License](https://img.shields.io/github/license/1kbgz/spaday-lightweight-charts)](https://github.com/1kbgz/spaday-lightweight-charts)
 [![PyPI](https://img.shields.io/pypi/v/spaday-lightweight-charts.svg)](https://pypi.python.org/pypi/spaday-lightweight-charts)
 
+[![Preview of the spaday-lightweight-charts dashboard](https://raw.githubusercontent.com/1kbgz/spaday-lightweight-charts/main/docs/img/preview.webp)](https://1kbgz.github.io/spaday-lightweight-charts/lite/)
+
 ## Documentation
 
 - [Build a live chart](docs/src/tutorial.md) — guided first chart.
@@ -35,7 +37,15 @@ serve(chart, packages=["lightweight-charts"])
 
 `data` accepts a point array or a time-keyed mapping. Bind it to a spaday store field for live updates. Supported series types are `line`, `area`, `candlestick`, `bar`, and `histogram`.
 
-## Run the local example
+## Browser examples
+
+- [Open the chart dashboard](https://1kbgz.github.io/spaday-lightweight-charts/lite/) ([source](spaday_lightweight_charts/example.py)).
+
+Python runs in a Pyodide worker with the same component tree and transports model as the local
+example. The price feed updates from Python without a backend server; renderer and theme controls
+run through Spaday. Each browser tab has its own feed.
+
+## Run the examples locally
 
 ```bash
 python -m pip install -e ".[examples]"
@@ -45,3 +55,14 @@ python -m spaday_lightweight_charts.example
 Open `http://127.0.0.1:8011` to inspect the [complete dashboard example](spaday_lightweight_charts/example.py): three responsive
 charts, server-streamed price data, renderer controls, per-point colors, and light/dark themes. It passes
 the local package descriptor directly, so it does not install or resolve the integration from GitHub.
+
+To build and serve the browser version from a checkout:
+
+```bash
+make develop
+make pyodide-example
+python -m http.server 8000 --directory dist
+```
+
+Open <http://127.0.0.1:8000/lite/>. The first load downloads Pyodide and Python dependencies;
+an internet connection is required. Run `make test-pyodide-example` to check the browser demo.
